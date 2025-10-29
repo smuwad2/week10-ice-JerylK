@@ -7,12 +7,26 @@
             }
         },
         // Hint: insert properties task (Object) and idx (Number)
+        props: {
+            index: Number,
+            task: Object
+        },
+        emits: [
+            'remove-task'
+        ]
     }
 </script>
 
 <template>
     <!-- TODO: add your template code here --> 
-   
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+            <h5 class="card-title">Deadline: {{ task.deadline }}</h5>
+            <hr>
+            <p class="card-text">{{ task.desc }}</p>
+            <button class="btn btn-primary" @click="$emit('remove-task', index)">Done</button>
+        </div>
+    </div>
 </template>
 
 
