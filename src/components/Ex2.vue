@@ -28,12 +28,15 @@
             .catch(error => {
                 this.posts = [{ entry: 'There was an error: ' + error.message }]
             })
+        },
+        components: {
+            blogPost
         }
     }
 </script>
 
 <template>
    <!-- TODO: make use of the 'blog-post' component to display the blog posts -->
-
+    <blogPost v-for="value in posts" :key="value.id" :post="value" />
 </template>
 
